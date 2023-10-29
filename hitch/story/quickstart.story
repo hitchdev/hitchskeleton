@@ -1,7 +1,7 @@
 Quickstart:
   about: |
     Create a website project.
- steps:
-  - hitchskelenton:
+  steps:
+  - hitchskeleton:
       cmd: website
       output: 
