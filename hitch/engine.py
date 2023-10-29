@@ -52,7 +52,7 @@ class Engine(BaseEngine):
             self.path.working.rmtree()
         self.path.working.mkdir()
 
-        for filename, contents in self.given["files"].items():
+        for filename, contents in self.given.get("files", {}).items():
             filepath = self.path.working.joinpath(filename)
             if not filepath.dirname().exists():
                 filepath.dirname().mkdir()

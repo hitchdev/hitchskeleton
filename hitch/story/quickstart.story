@@ -4,4 +4,5 @@ Quickstart:
   steps:
   - hitchskeleton:
       cmd: website
-      output: 
+      output: |
+        hello
