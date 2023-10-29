@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["hitchskeleton"]
+
+[project]
+name = "hitchskeleton"
+authors = [
+    {name = "Colm O'Connor", email = "colm.oconnor.github@gmail.com"},
+]
+description = "Bootstrap an integration test environment."
+license = {text = "MIT"}
+requires-python = ">=3.7.0"
+keywords = ["integration-tests", "tests", "testing", "jinja2"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Text Processing :: Markup",
+    "Topic :: Software Development :: Libraries",
+    "Natural Language :: English",
+]
+dependencies = [
+    "jinja2>=3.1.2",
+    "click>=8.1.3",
+    "python-slugify>=7.0.0",
+]
+dynamic = ["version", "readme"]
+
+[project.scripts]
+hitchskeleton = "hitchskeleton:cli"
+
+[project.urls]
+homepage = "https://hitchdev.com/hitchskeleton"
+documentation = "https://hitchdev.com/hitchskeleton/using"
+repository = "https://github.com/hitchdev/hitchskeleton"
+changelog = "https://hitchdev.com/hitchskeleton/changelog"
+
+[tool.setuptools.dynamic]
+readme = {file = ["README.md",], content-type = "text/markdown"}
+version = {file = "VERSION"}
