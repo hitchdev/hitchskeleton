@@ -5,4 +5,5 @@ Quickstart:
   - hitchskeleton:
       cmd: website
       output: |
-        hello
+        Cloning into 'hitchstory'...
+        Set up. Run ./run.sh make
