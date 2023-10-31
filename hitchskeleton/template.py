@@ -12,6 +12,7 @@ def website():
     cacheroot = homedir / ".cache"
     cachedir = cacheroot / "hitchskeleton"
     currentdir = Path(os.getcwd())
+    srchitch = cachedir / "hitchstory" / "examples" / "website"
     newhitchdir = currentdir / "hitch"
 
     if not cacheroot.exists():
@@ -30,12 +31,16 @@ def website():
     git("clone", "https://github.com/hitchdev/hitchstory.git").in_dir(cachedir).run()
 
     shutil.copytree(
-        cachedir / "hitchstory" / "examples" / "website" / "hitch", newhitchdir
+        srchitch / "hitch", newhitchdir
     )
+
+    shutil.copyfile(srchitch / "run.sh", currentdir / "run.sh")
 
     for existing_story in newhitchdir.joinpath("story").glob("*.story"):
         os.remove(existing_story)
 
     os.remove(newhitchdir / "selectors" / "selectors.yml")
+
+    
 
     click.echo("Set up. Run ./run.sh make")
